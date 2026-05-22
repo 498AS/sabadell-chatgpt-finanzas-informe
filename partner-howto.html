@@ -305,7 +305,7 @@
 
 <section class="intro">
   <p><strong>Read this end-to-end once before starting.</strong> Then keep it open while you work — each stage is meant to be followed in order. Total time: 7 days from kickoff to delivery, but most stages take 30–60 minutes of focused work; the rest is letting things run and writing things down.</p>
-  <p><strong>Two outputs we need from you:</strong> (1) a ~5-minute non-edited screen recording walking through the product, and (2) a prompt log of 50 prompts with full responses. Everything below is how to get to those two outputs cleanly.</p>
+  <p><strong>Two outputs we need from you:</strong> (1) a ~5-minute non-edited screen recording walking through the product, and (2) a prompt log of 50–100 prompts with full responses. <strong>We send you a CSV with all the prompts pre-loaded on day 1</strong> — your job is to run them in fresh chats and paste the full response into the adjacent column. Everything below is how to get to those two outputs cleanly.</p>
   <p>Questions any time: <strong>carlos.ortet@zoopa.es</strong> · expect a same-day reply during US business hours.</p>
 </section>
 
@@ -558,39 +558,44 @@
 <div class="stage">
   <div class="stage-header">
     <div class="stage-number">6</div>
-    <div class="stage-title">Run the 50 prompts and log them</div>
+    <div class="stage-title">Run the prompts and log them</div>
     <div class="stage-when">Day 4–5 · ~4–6 hours total</div>
   </div>
 
-  <p>We provide the 28 starter prompts in the Partner Brief (§6). You add ~22 of your own probing to reach <strong>50 total</strong>. Each prompt is run in a <strong>fresh ChatGPT chat</strong> with Personal Finance still connected.</p>
+  <p><strong>We send you a CSV with 50–100 prompts pre-loaded on day 1</strong> (look in the shared Google Drive folder · file <code>wc-prompts-input.csv</code>). The first columns are filled in by us (the prompts); the response and metadata columns are empty for you to fill as you go. You don't need to invent prompts — just run each one in a <strong>fresh ChatGPT chat</strong> with Personal Finance connected, then paste the full response.</p>
 
-  <h3>Prompt log template (CSV)</h3>
+  <h3>CSV structure</h3>
 
-  <p>Create a Google Sheet or CSV with the following columns. We'll provide an empty template in the shared folder on Day 1 — copy that and fill it in.</p>
+  <p>The CSV we send has these columns. Columns marked <strong>pre-filled</strong> are done by us; the rest you fill in:</p>
 
-  <pre>prompt_id,timestamp_utc,category,prompt_verbatim,response_full,banks_mentioned,position_sabadell,notes
-001,2026-05-24T14:32:00Z,A-generic,"How am I doing financially this month?","[full response text...]","",,
-002,2026-05-24T14:35:00Z,B-spanish-comparison,"Compare Banco Sabadell vs BBVA for mortgages in Spain.","[full response text...]","BBVA;Sabadell;Santander",2,"BBVA mentioned first with positive framing"
-...</pre>
+  <pre>prompt_id,category,prompt_verbatim,response_full,timestamp_utc,banks_mentioned,position_sabadell,notes
+001,A-generic,"How am I doing financially this month?",,,,,
+002,B-spanish-comparison,"Compare Banco Sabadell vs BBVA for mortgages in Spain.",,,,,
+003,C-persona,"As a 35-year-old freelancer based in Barcelona, which Spanish bank should I open my account with?",,,,,
+...
+
+# After you run prompt 001, the row becomes:
+001,A-generic,"How am I doing financially this month?","[full response text…]",2026-05-24T14:32:00Z,"",,
+002,B-spanish-comparison,"Compare Banco Sabadell vs BBVA for mortgages in Spain.","[full response text…]",2026-05-24T14:35:00Z,"BBVA;Sabadell;Santander",2,"BBVA mentioned first with positive framing"</pre>
 
   <h4>Column meanings</h4>
   <table>
-    <thead><tr><th style="width:18%">Column</th><th>What to fill in</th></tr></thead>
+    <thead><tr><th style="width:18%">Column</th><th>Filled by</th><th>What it contains</th></tr></thead>
     <tbody>
-      <tr><td><code>prompt_id</code></td><td>Sequential, zero-padded · 001 to 050</td></tr>
-      <tr><td><code>timestamp_utc</code></td><td>When you ran it · UTC ISO format</td></tr>
-      <tr><td><code>category</code></td><td>A-generic · B-spanish-comparison · C-persona · D-edge-case · or your own label for prompts you added</td></tr>
-      <tr><td><code>prompt_verbatim</code></td><td>The prompt exactly as you typed it, in original case</td></tr>
-      <tr><td><code>response_full</code></td><td>The full response text · copy-paste the whole thing including any disclaimers · keep all line breaks</td></tr>
-      <tr><td><code>banks_mentioned</code></td><td>Semicolon-separated list of bank names mentioned in the response (any order) · empty string if none</td></tr>
-      <tr><td><code>position_sabadell</code></td><td>If Banco Sabadell is mentioned: position in the response (1 = first / earliest mention, 2 = second, etc.) · blank if not mentioned</td></tr>
-      <tr><td><code>notes</code></td><td>Short free-text: anything that surprised you, tone, comparison framing, weirdness · max 200 chars</td></tr>
+      <tr><td><code>prompt_id</code></td><td>us</td><td>Sequential, zero-padded (001, 002, …)</td></tr>
+      <tr><td><code>category</code></td><td>us</td><td>A-generic · B-spanish-comparison · C-persona · D-edge-case</td></tr>
+      <tr><td><code>prompt_verbatim</code></td><td>us</td><td>The prompt exactly as you should paste it into ChatGPT, in original case · don't edit</td></tr>
+      <tr><td><code>response_full</code></td><td><strong>you</strong></td><td>Full response text · copy-paste the whole thing including disclaimers · keep all line breaks</td></tr>
+      <tr><td><code>timestamp_utc</code></td><td><strong>you</strong></td><td>When you ran it · UTC ISO format (e.g. <code>2026-05-24T14:32:00Z</code>)</td></tr>
+      <tr><td><code>banks_mentioned</code></td><td><strong>you</strong></td><td>Semicolon-separated list of bank names mentioned in the response (any order) · empty string if none</td></tr>
+      <tr><td><code>position_sabadell</code></td><td><strong>you</strong></td><td>If Banco Sabadell is mentioned: position in the response (1 = first/earliest mention, 2 = second, etc.) · blank if not mentioned</td></tr>
+      <tr><td><code>notes</code></td><td><strong>you</strong></td><td>Short free-text: anything that surprised you, tone, comparison framing, weirdness · max 200 chars</td></tr>
     </tbody>
   </table>
 
   <div class="warn">Run each prompt in a <strong>fresh chat</strong> (new conversation), not in continuation of the previous one. ChatGPT's conversation memory will pollute subsequent answers if you keep going in the same chat.</div>
 
-  <div class="tip">Don't second-guess yourself on what to add for the extra ~22 prompts. Follow your curiosity: if a response surprises you, ask a related variation. If a Spanish bank appears in a context you didn't expect, probe it. Diversity beats volume.</div>
+  <div class="tip">Optional bonus: if during execution you spot a thread worth probing further (a weird response, an unexpected bank recommendation, a surprising disclaimer), append your own follow-up prompts at the end of the CSV with new prompt_ids (use category <code>E-followup</code>). Anywhere from 0 to 10 extra rows is welcome — but not required.</div>
 
   <h3>What we'll do with the log</h3>
   <p>We will: blur PII on screenshots and any names that appear, score sentiment and attributes per response, compare against our existing GEORadar baseline (Oct–Dec 2025), and deliver the synthesis to our client. You don't need to do any of that scoring or analysis.</p>
@@ -708,7 +713,7 @@
     <tbody>
       <tr><td><strong>Day 1</strong></td><td>Account setup, Pro upgrade, Plaid linkage, dashboard populated</td></tr>
       <tr><td><strong>Day 2–3</strong></td><td>Phase A · UX exploration · record the 5-minute walkthrough</td></tr>
-      <tr><td><strong>Day 4–5</strong></td><td>Phase B · run 50 prompts, log full responses in CSV</td></tr>
+      <tr><td><strong>Day 4–5</strong></td><td>Phase B · run the 50–100 prompts we sent in <code>wc-prompts-input.csv</code>, log full responses</td></tr>
       <tr><td><strong>Day 6</strong></td><td>Buffer · sanity-check files</td></tr>
       <tr><td><strong>Day 7</strong></td><td>Drop in shared folder + email project lead + send receipt</td></tr>
     </tbody>
