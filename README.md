@@ -4,14 +4,14 @@ Restricted-access site for the *ChatGPT enters personal finance* engagement (19 
 
 ## Available documents
 
-| Document | URL | Audience |
-|---|---|---|
-| Informe ejecutivo (ES) | [`/`](https://498as.github.io/sabadell-chatgpt-finanzas-informe/) | Banco Sabadell · dirección |
-| Partner brief (EN) | [`/partner-brief.html`](https://498as.github.io/sabadell-chatgpt-finanzas-informe/partner-brief.html) | WC · US partner agency |
+| Document | URL | Audience | Access |
+|---|---|---|---|
+| Informe ejecutivo (ES) | [`/`](https://498as.github.io/sabadell-chatgpt-finanzas-informe/) | Banco Sabadell · dirección | Credenciales separadas |
+| Partner brief (EN) | [`/partner-brief.html`](https://498as.github.io/sabadell-chatgpt-finanzas-informe/partner-brief.html) | WC · US partner agency | Acceso directo |
 
-Each document is encrypted client-side with AES-GCM 256 (key derived via PBKDF2-SHA256, 250.000 iterations) from credentials provided separately. Each document has its own credential set.
+El informe ejecutivo está cifrado en cliente con AES-GCM 256 (clave PBKDF2-SHA256, 250.000 iteraciones); las credenciales se entregan por canal separado.
 
-For access credentials or problems: **carlos.ortet@zoopa.es**
+Para soporte de acceso: **carlos.ortet@zoopa.es**
 
 ## Serie
 
