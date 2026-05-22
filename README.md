@@ -1,13 +1,17 @@
-# Banco Sabadell × 498 Advance — Informe ejecutivo confidencial
+# Banco Sabadell × 498 Advance — Confidential
 
-Sitio de acceso restringido al informe ejecutivo *"ChatGPT entra en finanzas personales — implicaciones para Banco Sabadell"* (19 mayo 2026).
+Restricted-access site for the *ChatGPT enters personal finance* engagement (19 May 2026).
 
-## Acceso
+## Available documents
 
-El contenido del informe está cifrado en cliente con AES-GCM 256, derivando la clave vía PBKDF2-SHA256 (250.000 iteraciones) a partir del usuario y contraseña proporcionados por separado.
+| Document | URL | Audience |
+|---|---|---|
+| Informe ejecutivo (ES) | [`/`](https://498as.github.io/sabadell-chatgpt-finanzas-informe/) | Banco Sabadell · dirección |
+| Partner brief (EN) | [`/partner-brief.html`](https://498as.github.io/sabadell-chatgpt-finanzas-informe/partner-brief.html) | WC · US partner agency |
 
-Para solicitar credenciales de acceso o reportar problemas:
-**carlos.ortet@zoopa.es**
+Each document is encrypted client-side with AES-GCM 256 (key derived via PBKDF2-SHA256, 250.000 iterations) from credentials provided separately. Each document has its own credential set.
+
+For access credentials or problems: **carlos.ortet@zoopa.es**
 
 ## Serie
 
