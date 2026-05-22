@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT Personal Finance · Step-by-Step Playbook — WC × Zoopa</title>
+  <style>
+    @page { size: A4; margin: 1.2cm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      font-size: 10pt;
+      line-height: 1.55;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 30px;
+    }
+
+    .header {
+      border-bottom: 3px solid #004B87;
+      padding-bottom: 18px;
+      margin-bottom: 26px;
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .header h1 {
+      font-size: 22pt;
+      font-weight: 400;
+      letter-spacing: -0.4px;
+      margin-bottom: 6px;
+      color: #004B87;
+      line-height: 1.1;
+    }
+
+    .header .subtitle {
+      font-size: 10.5pt;
+      color: #555;
+      font-style: italic;
+      max-width: 70%;
+    }
+
+    .header .version-badge {
+      background: #006633;
+      color: #fff;
+      font-size: 7.5pt;
+      padding: 4px 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      align-self: flex-start;
+    }
+
+    .header-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      font-size: 8.5pt;
+      color: #888;
+    }
+
+    .confidential {
+      display: inline-block;
+      background: #004B87;
+      color: #fff;
+      font-size: 7pt;
+      padding: 3px 9px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      background: #f0f5fa;
+      padding: 14px 18px;
+      margin-bottom: 22px;
+      border-left: 4px solid #004B87;
+      font-size: 10pt;
+    }
+
+    .intro strong { color: #004B87; }
+
+    /* Stage container */
+    .stage {
+      margin-bottom: 30px;
+      page-break-inside: avoid;
+    }
+
+    .stage-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #d6d6d6;
+      padding-bottom: 6px;
+    }
+
+    .stage-number {
+      background: #004B87;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12pt;
+      font-weight: 600;
+      margin-right: 11px;
+    }
+
+    .stage-title {
+      font-size: 14pt;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .stage-when {
+      margin-left: auto;
+      font-size: 8.5pt;
+      color: #666;
+      background: #eef2f6;
+      padding: 3px 9px;
+      border-radius: 3px;
+    }
+
+    /* Steps */
+    .step {
+      margin: 12px 0 14px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .step-num {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #fff;
+      border: 1.5px solid #004B87;
+      color: #004B87;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9.5pt;
+      font-weight: 700;
+      border-radius: 50%;
+    }
+
+    .step-title {
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: #004B87;
+      margin-bottom: 5px;
+    }
+
+    .step-body { font-size: 9.5pt; }
+    .step-body p { margin-bottom: 6px; }
+    .step-body ul { margin: 4px 0 6px 20px; }
+    .step-body li { margin-bottom: 3px; }
+
+    /* Callouts */
+    .tip {
+      background: #f1f9f1;
+      border-left: 3px solid #060;
+      padding: 8px 12px;
+      margin: 8px 0;
+      font-size: 9pt;
+    }
+    .tip::before { content: "TIP · "; font-weight: 700; color: #060; letter-spacing: 0.5px; }
+
+    .warn {
+      background: #fff5f5;
+      border-left: 3px solid #c00;
+      padding: 8px 12px;
+      margin: 8px 0;
+      font-size: 9pt;
+    }
+    .warn::before { content: "HEADS-UP · "; font-weight: 700; color: #c00; letter-spacing: 0.5px; }
+
+    .note {
+      background: #fff9e6;
+      border-left: 3px solid #936800;
+      padding: 8px 12px;
+      margin: 8px 0;
+      font-size: 9pt;
+    }
+    .note::before { content: "NOTE · "; font-weight: 700; color: #936800; letter-spacing: 0.5px; }
+
+    /* Code blocks */
+    code, .code {
+      font-family: 'SF Mono', Consolas, Monaco, monospace;
+      font-size: 8.5pt;
+      background: #f4f4f4;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    pre {
+      background: #1a1a1a;
+      color: #f0f0f0;
+      padding: 12px 15px;
+      font-family: 'SF Mono', Consolas, Monaco, monospace;
+      font-size: 8.5pt;
+      line-height: 1.5;
+      overflow-x: auto;
+      margin: 10px 0;
+      border-radius: 3px;
+    }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      margin: 8px 0 12px 0;
+      padding: 0;
+    }
+
+    .checklist li {
+      padding: 4px 0 4px 26px;
+      position: relative;
+      font-size: 9.5pt;
+    }
+
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border: 1.5px solid #004B87;
+      background: #fff;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px;
+      font-size: 9pt;
+    }
+
+    th {
+      background: #004B87;
+      color: #fff;
+      text-align: left;
+      padding: 6px 10px;
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #e0e0e0;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) { background: #fafafa; }
+
+    h2 { font-size: 12pt; color: #004B87; margin: 18px 0 8px; font-weight: 600; }
+    h3 { font-size: 10.5pt; color: #004B87; margin: 12px 0 6px; font-weight: 600; }
+    h4 { font-size: 9.5pt; color: #004B87; margin: 8px 0 4px; font-weight: 600; }
+    p { margin-bottom: 6px; font-size: 9.5pt; }
+    a { color: #004B87; }
+
+    footer {
+      border-top: 2px solid #004B87;
+      margin-top: 30px;
+      padding-top: 12px;
+      font-size: 8pt;
+      color: #888;
+      display: flex;
+      justify-content: space-between;
+    }
+    footer strong { color: #004B87; }
+
+    @media print {
+      body { padding: 0; }
+      .stage { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-row">
+    <div>
+      <h1>ChatGPT Personal Finance · Playbook</h1>
+      <p class="subtitle">Step-by-step operational guide for the WC field-research engagement · companion to the Partner Brief</p>
+    </div>
+    <span class="version-badge">Playbook</span>
+  </div>
+  <div class="header-meta">
+    <span>Madrid · May 22, 2026</span>
+    <span class="confidential">Confidential · WC × Zoopa · Banco Sabadell</span>
+  </div>
+</header>
+
+<section class="intro">
+  <p><strong>Read this end-to-end once before starting.</strong> Then keep it open while you work — each stage is meant to be followed in order. Total time: 7 days from kickoff to delivery, but most stages take 30–60 minutes of focused work; the rest is letting things run and writing things down.</p>
+  <p><strong>Two outputs we need from you:</strong> (1) a ~5-minute non-edited screen recording walking through the product, and (2) a prompt log of 50 prompts with full responses. Everything below is how to get to those two outputs cleanly.</p>
+  <p>Questions any time: <strong>carlos.ortet@zoopa.es</strong> · expect a same-day reply during US business hours.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- STAGE 1 · PREREQUISITES                                            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-number">1</div>
+    <div class="stage-title">Prerequisites · before day 1</div>
+    <div class="stage-when">~30 min</div>
+  </div>
+
+  <p>Confirm you have all of the following before you begin. If any is a blocker, write to the project lead before spending money or time.</p>
+
+  <ul class="checklist">
+    <li><strong>A real US-based bank account</strong> connectable via Plaid — Chase, Bank of America, Wells Fargo, Capital One, Citibank, USAA, Schwab, Fidelity, AmEx, etc. The account doesn't need a large balance; it needs <em>real transactions</em> so the AI has something to read.</li>
+    <li><strong>A US-billable payment method</strong> for the ChatGPT Pro subscription — US-issued credit/debit card, or Apple Pay/Google Pay linked to a US payment source.</li>
+    <li><strong>A residential US IP address</strong> — your home/office IP works if you're physically in the US. If you're using any VPN, make sure it's a <em>residential</em> proxy/VPN (Mullvad residential, NordVPN residential, Bright Data, etc.). <span class="code">Datacenter VPNs (DigitalOcean, AWS, generic NordVPN) may trigger OpenAI's anti-abuse filters.</span></li>
+    <li><strong>A clean browser profile</strong> — Chrome or Safari on macOS preferred, with a fresh user profile (no other ChatGPT logins, no conflicting extensions). Edge or Firefox also fine.</li>
+    <li><strong>Screen recording software installed and tested</strong> — Loom (loom.com) is simplest; OBS, ScreenStudio, or QuickTime also fine. Test that audio captures cleanly from your microphone.</li>
+    <li><strong>A spreadsheet tool</strong> — Google Sheets, Excel, or Numbers. We'll provide a CSV template for the prompt log.</li>
+  </ul>
+
+  <div class="warn">If your bank shows the account location as non-US (some neobanks like Wise or Revolut do), Plaid may refuse to link it. Use a traditional US retail bank.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- STAGE 2 · CHATGPT ACCOUNT + PRO UPGRADE                            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-number">2</div>
+    <div class="stage-title">Create or upgrade your ChatGPT account to Pro</div>
+    <div class="stage-when">Day 1 · ~15 min</div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-title">Go to <a href="https://chatgpt.com">chatgpt.com</a></div>
+    <div class="step-body">
+      <p>If you already have a ChatGPT account that's US-based and on Pro: <strong>skip to Stage 3</strong>.</p>
+      <p>Otherwise, create a fresh account with a US email or use Google/Apple sign-in linked to a US Apple ID / Google account.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-title">Confirm location and language</div>
+    <div class="step-body">
+      <p>After login, go to <strong>Settings → Account → Location</strong>. Confirm it shows <em>United States</em>. If it shows another country, you're behind a non-US IP or your account was created from outside the US — fix the IP/VPN before continuing.</p>
+      <p>Set language to <strong>English (US)</strong>.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-title">Upgrade to Pro</div>
+    <div class="step-body">
+      <p>Click your profile (top-right) → <strong>Upgrade plan</strong> → choose <strong>Pro · US$200/month</strong>.</p>
+      <p>Pay with US card or Apple/Google Pay. <strong>Keep the receipt</strong> — we reimburse one month against invoice.</p>
+      <div class="tip">If you can't see the Pro option but only Plus / Go, your IP is being read as non-US. Stop, fix the IP, re-login, and retry.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-title">Verify GPT-5.5 is the default model</div>
+    <div class="step-body">
+      <p>Open a new chat. In the model selector at the top, confirm <strong>GPT-5.5</strong> is selected. If only older models are visible, refresh or wait a few minutes — Pro provisioning can take up to 30 min.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- STAGE 3 · ACCESS PERSONAL FINANCE + CONNECT BANK                   -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-number">3</div>
+    <div class="stage-title">Enable Personal Finance and connect your bank account</div>
+    <div class="stage-when">Day 1 · ~20 min</div>
+  </div>
+
+  <div class="warn">From this point on, anything visible on screen may end up in our blurred final assets. Use a bank account whose visibility you're comfortable with, and feel free to mask amounts manually if you prefer. We will blur any PII (account numbers, names, addresses, exact balances) on our end before sharing internally.</div>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-title">Open the Personal Finance app inside ChatGPT</div>
+    <div class="step-body">
+      <p>Go to <strong>Settings → Apps & Connectors → Finances</strong> (path may shift as the product is still in preview — look for "Personal Finance", "Finances", or "Bank accounts" in your Settings sidebar).</p>
+      <p>Click <strong>Enable</strong> or <strong>Connect accounts</strong>.</p>
+      <div class="note">If you don't see Personal Finance in Settings, check the OpenAI release notes (linked in the Partner Brief, §R) to confirm rollout status for your account. It may take 24–48h to appear after Pro upgrade.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-title">Read what ChatGPT says before you click "Continue"</div>
+    <div class="step-body">
+      <p><strong>Screenshot or screen-record the consent / disclosure screen.</strong> This is part of the value: how OpenAI explains data flow to the user is itself a finding.</p>
+      <p>Pay attention to: what data is shared, retention policy, how to disconnect, what ChatGPT can and can't do with the data.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-title">Launch the Plaid linkage flow</div>
+    <div class="step-body">
+      <p>Click <strong>Connect via Plaid</strong>. A Plaid modal opens.</p>
+      <ul>
+        <li>Search and select your US bank (e.g. Chase, Bank of America)</li>
+        <li>Enter your online banking credentials in the Plaid modal — <strong>not</strong> in the ChatGPT window itself</li>
+        <li>Approve any 2FA challenge from your bank</li>
+        <li>Choose which accounts to share (checking, savings, credit card, investments) — share at least one checking account with recent transactions</li>
+        <li>Click <strong>Continue</strong> to authorize</li>
+      </ul>
+      <div class="tip">Connect more than one institution if you can — different banks return different data quality and that variation is interesting for us.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-title">Confirm the dashboard populates</div>
+    <div class="step-body">
+      <p>After Plaid finishes, ChatGPT shows a Finances dashboard with balances, recent transactions, categories, etc. Wait 1–2 minutes for it to fully populate.</p>
+      <p>If the dashboard is empty or shows an error, screenshot the error and write to project lead before retrying.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- STAGE 4 · PREPARE TO RECORD                                        -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-number">4</div>
+    <div class="stage-title">Prepare your environment to record</div>
+    <div class="stage-when">Day 2 · ~10 min</div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-title">Set up the browser window</div>
+    <div class="step-body">
+      <ul>
+        <li>Maximize the browser window (full-screen, not just zoomed)</li>
+        <li>Close other tabs — only ChatGPT visible</li>
+        <li>Hide bookmarks bar (View → Hide Bookmarks Bar in Chrome)</li>
+        <li>Mute system notifications (macOS: Do Not Disturb · Windows: Focus Assist)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-title">Open your screen recording tool</div>
+    <div class="step-body">
+      <p><strong>Loom</strong> (easiest): start a new recording, choose "Screen + Cam" or "Screen only", set quality to <strong>1080p HD</strong>.</p>
+      <p><strong>OBS or QuickTime</strong>: configure for 1080p output, choose your microphone, do a 5-second test recording and play it back to verify audio works.</p>
+      <div class="tip">If you decide to add voice commentary, do a 30-second mic test before the real take. Bad audio is the #1 reason a recording has to be re-done.</div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-title">Decide on commentary or silent</div>
+    <div class="step-body">
+      <p>Voice commentary is <strong>nice-to-have, not required</strong>. If you feel comfortable narrating what you click and what surprises you, do it. If not, record silently — we can interpret the recording fine.</p>
+      <p>If silent, leave the mic off so we don't get ambient noise.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- STAGE 5 · THE 5-MINUTE WALKTHROUGH                                 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-number">5</div>
+    <div class="stage-title">Record the ~5-minute walkthrough</div>
+    <div class="stage-when">Day 2–3 · single take</div>
+  </div>
+
+  <p>One unedited take, ~5 minutes, walking through what a real user sees. <strong>Do not re-record</strong> if you fumble — the raw, unedited reaction is what we want. Mistakes, hesitations and "oh, this is weird" moments are valuable.</p>
+
+  <h3>Walkthrough script — what to cover</h3>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-title">Start at the ChatGPT homepage (~30s)</div>
+    <div class="step-body">
+      Show the default ChatGPT view, the model selector confirming GPT-5.5, and how you access Personal Finance from Settings or the sidebar.
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-title">Open the Finances dashboard (~60s)</div>
+    <div class="step-body">
+      Scroll through everything visible: balances, recent transactions, categories, planners, suggestions. Hover/click anything that looks clickable. Mention what's missing or surprising.
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-title">Ask three quick questions (~90s)</div>
+    <div class="step-body">
+      <p>Inside the Finances context, ask:</p>
+      <ul>
+        <li>"How am I doing financially this month?"</li>
+        <li>"Where am I overspending?"</li>
+        <li>"What's a healthy emergency fund for my income?"</li>
+      </ul>
+      Read the responses out loud (if narrating) or scroll calmly through them. Show how the AI references your real data vs gives generic advice.
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-title">Test a Spanish bank question (~60s)</div>
+    <div class="step-body">
+      Ask <em>"What is the best Spanish bank for freelancers?"</em> Show the response in full. This is the moment our client cares about most.
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-title">Show the disconnect flow (~30s)</div>
+    <div class="step-body">
+      Go back to Settings → Apps → Finances → Disconnect. Show what the disconnect screen says about data deletion. <strong>Do not actually disconnect</strong> — just show the screen, then back out. You'll need the connection live for Stage 6.
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-title">Stop the recording, save as MP4 or Loom link</div>
+    <div class="step-body">
+      <p>Naming convention: <code>wc-walkthrough-YYYYMMDD.mp4</code> (e.g. <code>wc-walkthrough-20260524.mp4</code>) or a Loom share URL.</p>
+      <p>Drop in the shared folder (Stage 8).</p>
+    </div>
+  </div>
+
+  <div class="tip">If the take is closer to 7–8 minutes, that's fine. If under 3 minutes, you probably skipped something — re-watch and confirm you covered all five blocks above.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- STAGE 6 · RUN THE 50 PROMPTS                                       -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-number">6</div>
+    <div class="stage-title">Run the 50 prompts and log them</div>
+    <div class="stage-when">Day 4–5 · ~4–6 hours total</div>
+  </div>
+
+  <p>We provide the 28 starter prompts in the Partner Brief (§6). You add ~22 of your own probing to reach <strong>50 total</strong>. Each prompt is run in a <strong>fresh ChatGPT chat</strong> with Personal Finance still connected.</p>
+
+  <h3>Prompt log template (CSV)</h3>
+
+  <p>Create a Google Sheet or CSV with the following columns. We'll provide an empty template in the shared folder on Day 1 — copy that and fill it in.</p>
+
+  <pre>prompt_id,timestamp_utc,category,prompt_verbatim,response_full,banks_mentioned,position_sabadell,notes
+001,2026-05-24T14:32:00Z,A-generic,"How am I doing financially this month?","[full response text...]","",,
+002,2026-05-24T14:35:00Z,B-spanish-comparison,"Compare Banco Sabadell vs BBVA for mortgages in Spain.","[full response text...]","BBVA;Sabadell;Santander",2,"BBVA mentioned first with positive framing"
+...</pre>
+
+  <h4>Column meanings</h4>
+  <table>
+    <thead><tr><th style="width:18%">Column</th><th>What to fill in</th></tr></thead>
+    <tbody>
+      <tr><td><code>prompt_id</code></td><td>Sequential, zero-padded · 001 to 050</td></tr>
+      <tr><td><code>timestamp_utc</code></td><td>When you ran it · UTC ISO format</td></tr>
+      <tr><td><code>category</code></td><td>A-generic · B-spanish-comparison · C-persona · D-edge-case · or your own label for prompts you added</td></tr>
+      <tr><td><code>prompt_verbatim</code></td><td>The prompt exactly as you typed it, in original case</td></tr>
+      <tr><td><code>response_full</code></td><td>The full response text · copy-paste the whole thing including any disclaimers · keep all line breaks</td></tr>
+      <tr><td><code>banks_mentioned</code></td><td>Semicolon-separated list of bank names mentioned in the response (any order) · empty string if none</td></tr>
+      <tr><td><code>position_sabadell</code></td><td>If Banco Sabadell is mentioned: position in the response (1 = first / earliest mention, 2 = second, etc.) · blank if not mentioned</td></tr>
+      <tr><td><code>notes</code></td><td>Short free-text: anything that surprised you, tone, comparison framing, weirdness · max 200 chars</td></tr>
+    </tbody>
+  </table>
+
+  <div class="warn">Run each prompt in a <strong>fresh chat</strong> (new conversation), not in continuation of the previous one. ChatGPT's conversation memory will pollute subsequent answers if you keep going in the same chat.</div>
+
+  <div class="tip">Don't second-guess yourself on what to add for the extra ~22 prompts. Follow your curiosity: if a response surprises you, ask a related variation. If a Spanish bank appears in a context you didn't expect, probe it. Diversity beats volume.</div>
+
+  <h3>What we'll do with the log</h3>
+  <p>We will: blur PII on screenshots and any names that appear, score sentiment and attributes per response, compare against our existing GEORadar baseline (Oct–Dec 2025), and deliver the synthesis to our client. You don't need to do any of that scoring or analysis.</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- STAGE 7 · DAY 6 BUFFER + SANITY CHECK                              -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-number">7</div>
+    <div class="stage-title">Day 6 · buffer + sanity check</div>
+    <div class="stage-when">Day 6 · ~1 hour</div>
+  </div>
+
+  <p>Day 6 exists so you don't have to deliver on the same day you finish. Use it to:</p>
+
+  <ul class="checklist">
+    <li>Watch your recording end-to-end at 1× speed · confirm audio is clear (if narrated) and nothing critical is missing</li>
+    <li>Open the CSV log and confirm 50 rows are filled · spot-check 5 random rows for completeness</li>
+    <li>Re-run any prompt where you missed copying the full response · timestamp it freshly</li>
+    <li>Anonymize anything personal you don't want shared even with us (you don't have to — we blur on our end — but the option is yours)</li>
+    <li>File-name everything per convention (Stage 8)</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- STAGE 8 · DELIVERY                                                 -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-number">8</div>
+    <div class="stage-title">Day 7 · delivery</div>
+    <div class="stage-when">Day 7 · ~30 min</div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-title">Open the shared folder we provisioned on Day 1</div>
+    <div class="step-body">
+      Google Drive folder URL: provided by the project lead on kickoff. If you didn't receive it, ping carlos.ortet@zoopa.es.
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-title">Drop the two files in the folder</div>
+    <div class="step-body">
+      <p>Naming convention:</p>
+      <ul>
+        <li><code>wc-walkthrough-YYYYMMDD.mp4</code> (or a Loom share link if you used Loom — paste the link into a text file <code>wc-walkthrough-YYYYMMDD-loom.txt</code>)</li>
+        <li><code>wc-prompt-log-YYYYMMDD.csv</code> (UTF-8 encoded, comma-separated)</li>
+      </ul>
+      Where <code>YYYYMMDD</code> is the delivery date.
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-title">Send the confirmation email</div>
+    <div class="step-body">
+      <p>To: <strong>carlos.ortet@zoopa.es</strong> (project lead)<br>
+      Subject: <code>WC delivery · ChatGPT Personal Finance · [your delivery date]</code></p>
+      <p>Body: confirm both files are in the shared folder, total prompts run, total time recorded, and anything you think we should know that didn't fit in the log notes column.</p>
+      <p>Attach the ChatGPT Pro subscription receipt for reimbursement.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-title">Optional 15-min handoff call</div>
+    <div class="step-body">
+      If you have qualitative observations that don't fit a CSV — moments where the product behaved oddly, recommendations that felt off, security/privacy concerns — schedule a 15-min Zoom or Slack huddle with the project lead. Optional but valued.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- COMMON PITFALLS                                                    -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-number">9</div>
+    <div class="stage-title">Common pitfalls · read before you start</div>
+    <div class="stage-when">reference</div>
+  </div>
+
+  <table>
+    <thead><tr><th style="width:30%">Pitfall</th><th>How to avoid</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Datacenter IP triggers OpenAI block</strong></td><td>Use a residential US IP or physical US location. Generic VPNs (free or cheap) are usually datacenter. Pay for residential proxy if needed.</td></tr>
+      <tr><td><strong>Bank not supported by Plaid</strong></td><td>Switch to a major US retail bank. Neobanks and non-US institutions often won't link.</td></tr>
+      <tr><td><strong>Personal Finance not visible in Settings</strong></td><td>Wait 24–48h after Pro upgrade. If still missing, check OpenAI release notes for rollout status.</td></tr>
+      <tr><td><strong>Prompts answered with stale data</strong></td><td>Wait 1–2 min after Plaid linkage before running prompts so the dashboard is populated.</td></tr>
+      <tr><td><strong>Same chat used for multiple prompts</strong></td><td>Start a <strong>new chat</strong> for each prompt unless you're explicitly testing conversation memory. Cross-prompt contamination ruins comparability.</td></tr>
+      <tr><td><strong>CSV breaks on commas inside response text</strong></td><td>Quote each cell with double quotes <code>"…"</code>, and escape internal quotes by doubling them <code>""</code>. Google Sheets / Excel handle this if you use their CSV export.</td></tr>
+      <tr><td><strong>Recording exceeds 10 min</strong></td><td>Trim to ~5 min by skipping anything that isn't the five scripted blocks. We don't need the slow scrolls or exhaustive exploration.</td></tr>
+      <tr><td><strong>You realize on Day 5 something broke</strong></td><td>Ping the project lead immediately. Day 6 exists as buffer — use it. Better to flag early than deliver late.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- QUICK REFERENCE CARD                                               -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="stage">
+  <div class="stage-header">
+    <div class="stage-number">★</div>
+    <div class="stage-title">Quick reference card · stick this on your monitor</div>
+    <div class="stage-when">cheat sheet</div>
+  </div>
+
+  <table>
+    <thead><tr><th style="width:18%">Day</th><th>Do this</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Day 1</strong></td><td>Account setup, Pro upgrade, Plaid linkage, dashboard populated</td></tr>
+      <tr><td><strong>Day 2–3</strong></td><td>Phase A · UX exploration · record the 5-minute walkthrough</td></tr>
+      <tr><td><strong>Day 4–5</strong></td><td>Phase B · run 50 prompts, log full responses in CSV</td></tr>
+      <tr><td><strong>Day 6</strong></td><td>Buffer · sanity-check files</td></tr>
+      <tr><td><strong>Day 7</strong></td><td>Drop in shared folder + email project lead + send receipt</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Key URLs</h3>
+  <ul>
+    <li>ChatGPT: <a href="https://chatgpt.com">chatgpt.com</a></li>
+    <li>OpenAI Help · Release notes: <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">help.openai.com/en/articles/6825453</a></li>
+    <li>OpenAI Pricing (Pro plan): <a href="https://chatgpt.com/pricing/">chatgpt.com/pricing</a></li>
+    <li>Partner Brief (this playbook's companion document): <a href="https://498as.github.io/sabadell-chatgpt-finanzas-informe/partner-brief.html">498as.github.io/sabadell-chatgpt-finanzas-informe/partner-brief.html</a></li>
+  </ul>
+
+  <h3>Contact · any time</h3>
+  <p><strong>Carlos Ortet</strong> · Project lead, 498 Advance / Zoopa<br>
+  Email: <a href="mailto:carlos.ortet@zoopa.es">carlos.ortet@zoopa.es</a> · Same-day reply during US business hours</p>
+</div>
+
+<footer>
+  <span><strong>498 Advance</strong> · GEORadar · a Zoopa Group company</span>
+  <span>Playbook · WC × Zoopa · Banco Sabadell · May 22, 2026</span>
+</footer>
+
+</body>
+</html>
