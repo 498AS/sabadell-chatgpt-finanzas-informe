@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT Finanzas Personales · Informe Ejecutivo — Banco Sabadell</title>
+  <style>
+    @page { size: A4; margin: 1.2cm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #1a1a1a;
+      background: #fff;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 30px;
+    }
+
+    .header {
+      border-bottom: 3px solid #004B87;
+      padding-bottom: 18px;
+      margin-bottom: 26px;
+    }
+
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .header h1 {
+      font-size: 22pt;
+      font-weight: 400;
+      letter-spacing: -0.4px;
+      margin-bottom: 6px;
+      color: #004B87;
+      line-height: 1.1;
+    }
+
+    .header .subtitle {
+      font-size: 10.5pt;
+      color: #555;
+      font-style: italic;
+      max-width: 70%;
+    }
+
+    .header-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      font-size: 8.5pt;
+      color: #888;
+      gap: 12px;
+    }
+
+    .confidential {
+      display: inline-block;
+      background: #004B87;
+      color: #fff;
+      font-size: 7pt;
+      padding: 3px 9px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .exec-summary {
+      background: #f0f5fa;
+      padding: 14px 18px;
+      margin-bottom: 22px;
+      border-left: 4px solid #004B87;
+    }
+
+    .exec-summary h2 {
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: #004B87;
+    }
+
+    .exec-summary p {
+      font-size: 10pt;
+      margin-bottom: 6px;
+    }
+
+    .exec-summary strong { color: #004B87; }
+
+    .section {
+      margin-bottom: 28px;
+      page-break-inside: avoid;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #d6d6d6;
+      padding-bottom: 6px;
+    }
+
+    .section-number {
+      background: #004B87;
+      color: #fff;
+      min-width: 26px;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11pt;
+      font-weight: 600;
+      margin-right: 11px;
+    }
+
+    .section-title {
+      font-size: 13pt;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .section-time {
+      margin-left: auto;
+      font-size: 8.5pt;
+      color: #666;
+      background: #eef2f6;
+      padding: 3px 9px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+
+    h3 {
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: #004B87;
+      margin: 16px 0 8px;
+    }
+
+    p { margin-bottom: 8px; font-size: 9.5pt; }
+
+    .insight-box {
+      background: #fff9e6;
+      border: 1px solid #ffe066;
+      padding: 10px 13px;
+      margin-bottom: 10px;
+      font-size: 9.5pt;
+    }
+    .insight-box::before {
+      content: "POR QUÉ IMPORTA: ";
+      font-weight: 700;
+      color: #936800;
+    }
+
+    .solution-box {
+      background: #f1f9f1;
+      border: 1px solid #cce5cc;
+      padding: 10px 13px;
+      margin-bottom: 10px;
+      font-size: 9.5pt;
+    }
+    .solution-box::before {
+      content: "LECTURA EJECUTIVA: ";
+      font-weight: 700;
+      color: #060;
+    }
+
+    .so-what {
+      background: #004B87;
+      color: #fff;
+      padding: 9px 13px;
+      margin-top: 12px;
+      font-size: 9.5pt;
+    }
+    .so-what::before {
+      content: "LO MÁS RELEVANTE PARA SABADELL — ";
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px;
+      font-size: 9pt;
+    }
+
+    th {
+      background: #004B87;
+      color: #fff;
+      text-align: left;
+      padding: 7px 10px;
+      font-weight: 500;
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      padding: 7px 10px;
+      border-bottom: 1px solid #e0e0e0;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) { background: #fafafa; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 12px 0;
+    }
+
+    .card {
+      background: #fafafa;
+      border: 1px solid #e3e3e3;
+      padding: 11px 13px;
+      font-size: 9pt;
+    }
+
+    .card h4 {
+      font-size: 9.5pt;
+      color: #004B87;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .evidence-layout {
+      display: grid;
+      grid-template-columns: minmax(160px, 0.65fr) minmax(0, 1.35fr);
+      gap: 14px;
+      margin: 14px 0;
+      align-items: start;
+    }
+
+    .visual-panel {
+      border: 1px solid #e3e3e3;
+      background: #fafafa;
+      padding: 10px;
+    }
+
+    .visual-panel h4,
+    .carousel-header h4 {
+      font-size: 9.5pt;
+      color: #004B87;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .visual-panel p,
+    .carousel-header p {
+      color: #555;
+      font-size: 8.8pt;
+      margin-bottom: 9px;
+    }
+
+    .pricing-image {
+      width: 100%;
+      display: block;
+      border: 1px solid #ececec;
+      background: #fff;
+    }
+
+    .carousel-panel {
+      border: 1px solid #e3e3e3;
+      background: #fafafa;
+      padding: 10px;
+      min-width: 0;
+    }
+
+    .carousel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .carousel-nav {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      min-width: 150px;
+    }
+
+    .carousel-nav a {
+      color: #004B87;
+      border: 1px solid #c8d7e4;
+      background: #fff;
+      text-decoration: none;
+      font-size: 7.8pt;
+      line-height: 1;
+      padding: 5px 7px;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .onboarding-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      border: 1px solid #ededed;
+      background: #fff;
+    }
+
+    .carousel-slide {
+      scroll-snap-align: start;
+      padding: 10px;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      max-height: 360px;
+      object-fit: contain;
+      display: block;
+      background: #fff;
+    }
+
+    .carousel-slide figcaption {
+      font-size: 8.4pt;
+      color: #555;
+      margin-top: 7px;
+      text-align: center;
+    }
+
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin: 14px 0 24px;
+    }
+
+    .kpi {
+      background: #004B87;
+      color: #fff;
+      padding: 10px 8px;
+      text-align: center;
+    }
+
+    .kpi-value {
+      font-size: 18pt;
+      font-weight: 700;
+      display: block;
+      line-height: 1.1;
+    }
+
+    .kpi-label {
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 4px;
+      opacity: 0.9;
+    }
+
+    ul, ol { margin: 6px 0 12px 22px; font-size: 9.5pt; }
+    li { margin-bottom: 4px; }
+
+    footer {
+      border-top: 2px solid #004B87;
+      margin-top: 30px;
+      padding-top: 12px;
+      font-size: 8pt;
+      color: #888;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    footer strong { color: #004B87; }
+
+    .sources { font-size: 8.5pt; line-height: 1.45; }
+    .sources a { color: #004B87; text-decoration: none; word-break: break-all; }
+    .sources a:hover { text-decoration: underline; }
+
+    @media print {
+      body { padding: 0; }
+      .section { page-break-inside: avoid; }
+      .evidence-layout { grid-template-columns: 1fr; }
+      .onboarding-carousel {
+        display: block;
+        overflow: visible;
+        border: 0;
+      }
+      .carousel-slide {
+        border: 1px solid #ededed;
+        margin-bottom: 10px;
+        page-break-inside: avoid;
+      }
+      .carousel-nav { display: none; }
+    }
+
+    @media (max-width: 760px) {
+      body { padding: 18px; }
+      .header-row, .header-meta, footer { flex-direction: column; align-items: flex-start; }
+      .header .subtitle { max-width: 100%; }
+      .kpi-strip, .grid-2, .evidence-layout { grid-template-columns: 1fr; }
+      .section-header { align-items: flex-start; }
+      .section-time { display: none; }
+      .carousel-header { flex-direction: column; }
+      .carousel-nav { justify-content: flex-start; min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-row">
+    <div>
+      <h1>ChatGPT Finanzas Personales · Informe Ejecutivo</h1>
+      <p class="subtitle">Hallazgos observados para Banco Sabadell · conexión real activa · foco en calidad de datos, capacidades y posicionamiento de bancos españoles</p>
+    </div>
+  </div>
+  <div class="header-meta">
+    <span>Madrid · 29 de mayo de 2026</span>
+    <span class="confidential">Confidencial · Banco Sabadell</span>
+  </div>
+</header>
+
+<!-- EXEC SUMMARY -->
+<section class="exec-summary">
+  <h2>La lectura en un párrafo</h2>
+  <p><strong>ChatGPT Finanzas Personales ya está conectado a una cuenta bancaria real</strong> y puede consultarse de nuevo cuando sea necesario para ampliar pruebas, repetir prompts o validar cambios del producto. OpenAI lo presenta oficialmente como una <strong>preview</strong> para usuarios Pro en EE. UU., desplegada gradualmente para aprender del uso real y mejorar la experiencia.</p>
+  <p>La conexión bancaria es sencilla y la experiencia conversacional es fluida: resume gasto, deuda, ahorro, presupuesto, inversión y bancos españoles.</p>
+  <p><strong>El hallazgo crítico no es conversacional, sino factual.</strong> En la prueba, el saldo de una cuenta corriente no coincidía con el saldo real del banco; incluso tras refrescar, ChatGPT mantuvo el dato incorrecto y recomendó usar la app bancaria como fuente de verdad.</p>
+  <p><strong>Conclusión operativa:</strong> hoy funciona como capa de interpretación y explicación, pero no como fuente fiable para decisiones financieras sensibles mientras balances, sincronización y cobertura histórica no sean consistentes.</p>
+</section>
+
+<!-- KPI STRIP -->
+<div class="kpi-strip">
+  <div class="kpi">
+    <span class="kpi-value">Preview</span>
+    <span class="kpi-label">Fase de prueba oficial de OpenAI</span>
+  </div>
+  <div class="kpi">
+    <span class="kpi-value">1h</span>
+    <span class="kpi-label">Sin actualización fiable observada tras crear/conectar</span>
+  </div>
+  <div class="kpi">
+    <span class="kpi-value">Básico</span>
+    <span class="kpi-label">Nivel observado de clasificación de gasto</span>
+  </div>
+  <div class="kpi">
+    <span class="kpi-value">Sí</span>
+    <span class="kpi-label">Recomienda bancos si se pregunta directamente</span>
+  </div>
+</div>
+
+<!-- 01 · CONTEXT -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <div class="section-title">Contexto · qué se probó y por qué importa</div>
+    <div class="section-time">lectura 2 min</div>
+  </div>
+
+  <p>El análisis parte de un caso de uso real: una cuenta de ChatGPT con acceso a la funcionalidad de finanzas personales en EE. UU., conectada a cuentas bancarias mediante Plaid. Según OpenAI, no se trata todavía de un producto plenamente generalizado: es una experiencia en preview para usuarios Pro en Estados Unidos, con despliegue gradual. La prueba permite observar tanto el proceso de conexión como la calidad de las respuestas una vez ChatGPT tiene acceso a datos financieros del usuario.</p>
+
+  <p>La conversación analizada cubre cuatro bloques principales:</p>
+
+  <ul>
+    <li><strong>Conexión y lectura de cuentas bancarias</strong> mediante Plaid.</li>
+    <li><strong>Revisión de saldos, gasto mensual, deuda, ahorro y presupuesto.</strong></li>
+    <li><strong>Recomendaciones sobre ahorro, inversión y planificación.</strong></li>
+    <li><strong>Preguntas sobre bancos estadounidenses, bancos españoles y Banc Sabadell.</strong></li>
+  </ul>
+
+  <div class="insight-box">
+    La herramienta empieza a ocupar una conversación que hasta ahora se producía dentro de canales bancarios o apps financieras: presupuesto, liquidez, deuda, ahorro, inversión y elección de entidad. La condición de preview refuerza que los fallos observados deben leerse como señales tempranas de producto, no como comportamiento definitivo.
+  </div>
+</section>
+
+<!-- 02 · ONBOARDING -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <div class="section-title">Onboarding · conexión bancaria sencilla</div>
+    <div class="section-time">lectura 1 min</div>
+  </div>
+
+  <p>La conexión bancaria se percibe como sencilla. El proceso de vinculación mediante Plaid no parece ser una barrera significativa para un usuario acostumbrado a conectar cuentas a apps financieras. Una vez conectadas las cuentas, ChatGPT puede empezar a razonar sobre saldos, deuda, gasto y objetivos financieros en lenguaje natural.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>Lo que funciona</h4>
+      <ul>
+        <li>Proceso de conexión de baja fricción.</li>
+        <li>Acceso conversacional inmediato a preguntas financieras.</li>
+        <li>Capacidad para resumir gasto, saldos y deuda en lenguaje natural.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Lo que no queda resuelto</h4>
+      <ul>
+        <li>La conexión no garantiza datos actuales.</li>
+        <li>El usuario puede confiar en una respuesta bien redactada aunque la base factual sea incorrecta.</li>
+        <li>El banco sigue siendo la fuente de verdad cuando hay discrepancias.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="solution-box">
+    El valor inicial no está en un dashboard avanzado, sino en poder preguntar directamente: "cómo voy este mes", "dónde estoy gastando de más" o "qué debería revisar".
+  </div>
+
+  <div class="evidence-layout">
+    <aside class="visual-panel">
+      <h4>Requisito de acceso observado</h4>
+      <p>La primera captura corresponde al pricing del plan Pro, por lo que queda separada del flujo de onboarding.</p>
+      <img class="pricing-image" src="assets/onboarding/pricing-pro-plan.png" alt="Pricing del plan Pro de ChatGPT">
+    </aside>
+
+    <div class="carousel-panel">
+      <div class="carousel-header">
+        <div>
+          <h4>Proceso de onboarding observado</h4>
+          <p>Secuencia de pantallas desde la invitación inicial hasta el paso de Plaid para conectar la cuenta.</p>
+        </div>
+        <nav class="carousel-nav" aria-label="Navegación del carrusel de onboarding">
+          <a href="#onboarding-1">1</a>
+          <a href="#onboarding-2">2</a>
+          <a href="#onboarding-3">3</a>
+          <a href="#onboarding-4">4</a>
+          <a href="#onboarding-5">5</a>
+          <a href="#onboarding-6">6</a>
+        </nav>
+      </div>
+
+      <div class="onboarding-carousel" aria-label="Capturas del proceso de onboarding de ChatGPT Finanzas">
+        <figure class="carousel-slide" id="onboarding-1">
+          <img src="assets/onboarding/onboarding-01-intro.png" alt="Pantalla inicial de ChatGPT Finanzas con llamada a empezar">
+          <figcaption>1 · Invitación inicial a gestionar finanzas desde ChatGPT.</figcaption>
+        </figure>
+        <figure class="carousel-slide" id="onboarding-2">
+          <img src="assets/onboarding/onboarding-02-menu-finances.png" alt="Menú lateral de ChatGPT con acceso a Finances">
+          <figcaption>2 · Acceso a Finances desde el menú de ChatGPT.</figcaption>
+        </figure>
+        <figure class="carousel-slide" id="onboarding-3">
+          <img src="assets/onboarding/onboarding-03-finances-entry.png" alt="Pantalla de Finances con botón para empezar">
+          <figcaption>3 · Entrada a Finances y llamada a conectar cuentas.</figcaption>
+        </figure>
+        <figure class="carousel-slide" id="onboarding-4">
+          <img src="assets/onboarding/onboarding-04-connect-finances.png" alt="Modal Connect Finances con información de privacidad y seguridad">
+          <figcaption>4 · Confirmación de privacidad, control del usuario y uso informativo.</figcaption>
+        </figure>
+        <figure class="carousel-slide" id="onboarding-5">
+          <img src="assets/onboarding/onboarding-05-plaid-card.png" alt="Tarjeta de Plaid para conectar cuentas financieras">
+          <figcaption>5 · ChatGPT abre el flujo de conexión bancaria mediante Plaid.</figcaption>
+        </figure>
+        <figure class="carousel-slide" id="onboarding-6">
+          <img src="assets/onboarding/onboarding-06-plaid-phone.png" alt="Pantalla de Plaid para continuar con número de teléfono">
+          <figcaption>6 · Inicio de autenticación en Plaid para vincular la cuenta.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · DATA QUALITY -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <div class="section-title">Calidad de datos · el hallazgo crítico</div>
+    <div class="section-time">lectura 2 min</div>
+  </div>
+
+  <p>Este es el punto más importante de la prueba. En la conversación, el usuario señaló que el saldo de la cuenta corriente conectada no parecía correcto. Tras revisar y refrescar la conexión, el dato siguió sin cuadrar con el saldo real.</p>
+
+  <p>El propio sistema termino indicando que, para esa cuenta, debia usarse la app bancaria como fuente de verdad. Este comportamiento reduce el valor de ChatGPT como agregador financiero: puede explicar bien, pero no puede sostener una recomendación si el dato de base no es fiable.</p>
+
+  <table>
+    <thead>
+      <tr><th style="width:28%">Elemento observado</th><th>Resultado</th><th style="width:28%">Implicacion</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Balance conectado</strong></td><td>No coincidía con el saldo actual mostrado por la entidad bancaria.</td><td>Riesgo factual alto.</td></tr>
+      <tr><td><strong>Refresco de datos</strong></td><td>Tras refrescar, ChatGPT mantuvo la misma información incorrecta.</td><td>Sincronizacion insuficiente en la prueba.</td></tr>
+      <tr><td><strong>Respuesta del asistente</strong></td><td>Respondió a la inconsistencia señalada por el usuario y recomendó usar la app bancaria.</td><td>El banco conserva el rol de fuente de verdad.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="so-what">si los balances no cuadran, la utilidad financiera queda limitada aunque la conversación sea buena. Para decisiones sensibles, el producto no puede tratarse como fuente fiable en su estado observado.</div>
+</section>
+
+<!-- 04 · COVERAGE -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <div class="section-title">Cobertura temporal · historial limitado</div>
+    <div class="section-time">lectura 1 min</div>
+  </div>
+
+  <p>La herramienta no pareció cargar toda la información financiera de golpe ni ofrecer una vista completa y estable de más de un mes de actividad. El análisis se centro principalmente en el mes en curso y en categorías recientes.</p>
+
+  <p>Esta limitacion afecta a varios usos que un cliente esperaria de una herramienta de finanzas personales:</p>
+
+  <ul>
+    <li>Detectar patrones de gasto de medio plazo.</li>
+    <li>Comparar meses y entender evolución.</li>
+    <li>Identificar recurrencias con suficiente confianza.</li>
+    <li>Construir presupuestos basados en historial amplio.</li>
+    <li>Evaluar evolución de deuda, ahorro o liquidez.</li>
+  </ul>
+
+  <div class="insight-box">
+    La conversación muestra capacidad de resumen mensual, pero no evidencia una visión histórica profunda ni una sincronización completa de datos pasados.
+  </div>
+</section>
+
+<!-- 05 · CLASSIFICATION AND ADVICE -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-number">5</div>
+    <div class="section-title">Clasificación, análisis y consejos</div>
+    <div class="section-time">lectura 2 min</div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>Clasificación de gastos</h4>
+      <p>Funciona a un nivel útil pero básico. Agrupa gasto en categorías como vivienda, compras, transporte, restauración, salud, alimentación o suscripciones.</p>
+      <ul>
+        <li>Categorias genéricas.</li>
+        <li>No se observan reglas sofisticadas de reclasificación.</li>
+        <li>Detección de anomalías simple.</li>
+        <li>Sin ventaja clara frente a apps actuales.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Consejos y accionabilidad</h4>
+      <p>Las respuestas son razonables y fáciles de entender, pero todavía poco accionables. La herramienta recomienda, estructura y explica; no ejecuta acciones ni demuestra precisión suficiente para delegar decisiones.</p>
+      <ul>
+        <li>Propone presupuestos por categoría.</li>
+        <li>Sugiere ahorro por nómina.</li>
+        <li>Orienta sobre deuda e inversión.</li>
+        <li>Mantiene tono prudente en objetivos de corto plazo.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="solution-box">
+    La mejora frente a apps tradicionales está menos en la categorización y más en la forma conversacional de explicar los datos.
+  </div>
+</section>
+
+<!-- 06 · SPANISH BANKS -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-number">6</div>
+    <div class="section-title">Bancos y entidades financieras · comportamiento observado</div>
+    <div class="section-time">lectura 2 min</div>
+  </div>
+
+  <p>La conversación muestra primero un comportamiento general: ChatGPT no introduce bancos ni entidades financieras como recomendación si el usuario no lo pregunta de forma específica. Puede mencionar entidades cuando forman parte del contexto o de la pregunta, pero no parece convertir una consulta financiera genérica en una recomendación bancaria espontánea.</p>
+
+  <p>Cuando el usuario pregunta de forma concreta por bancos españoles o por España, ChatGPT da recomendaciones claras, comparativas y rankings explícitos.</p>
+
+  <table>
+    <thead>
+      <tr><th style="width:22%">Entidad o grupo</th><th>Posicionamiento observado</th><th style="width:24%">Lectura para Sabadell</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>BBVA</strong></td><td>Aparece como recomendación preferida por defecto para una cuenta principal en España.</td><td>Principal competidor en recomendación general.</td></tr>
+      <tr><td><strong>Banco Sabadell</strong></td><td>Aparece como alternativa sólida, especialmente si la pareja o familia ya usa el banco, si se valora banca tradicional, oficinas o experiencia con clientes internacionales.</td><td>Presencia positiva, pero no primera opción general.</td></tr>
+      <tr><td><strong>Santander / CaixaBank</strong></td><td>Aparecen como opciones de red amplia, con advertencias sobre comisiones o condiciones.</td><td>Comparables en banca tradicional, con cautelas.</td></tr>
+      <tr><td><strong>Wise / Revolut</strong></td><td>Aparecen como complementos para mover USD a EUR, no como banco principal para vida financiera local.</td><td>Competencia funcional en cambio/divisa, no sustituto completo.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="so-what">Sabadell aparece cuando se fuerza el contexto, pero ChatGPT tiende a colocar BBVA por delante para uso cotidiano por app, red y facilidad percibida.</div>
+</section>
+
+<!-- 07 · KEY FINDINGS -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-number">7</div>
+    <div class="section-title">Hallazgos clave para Banc Sabadell</div>
+    <div class="section-time">lectura 2 min</div>
+  </div>
+
+  <ol>
+    <li>La conexión bancaria es fácil y la experiencia inicial tiene baja fricción.</li>
+    <li>La principal debilidad observada no es conversacional, sino factual: los balances conectados pueden no coincidir con los saldos reales.</li>
+    <li>ChatGPT responde a la inconsistencia señalada por el usuario y deriva a la app bancaria como fuente de verdad.</li>
+    <li>La sincronización de datos no parece suficientemente estable en la primera hora tras conectar la cuenta.</li>
+    <li>La carga histórica parece limitada; no se observa una visión completa y fiable más allá del corto plazo.</li>
+    <li>La clasificación de gastos es útil pero básica, comparable a herramientas de gestión financiera ya existentes.</li>
+    <li>Los consejos son comprensibles y bien estructurados, pero todavía poco accionables.</li>
+    <li>ChatGPT puede hablar de inversión y sugerir plataformas o vehículos generales, aunque con tono prudente.</li>
+    <li>Si no se pregunta por bancos o entidades financieras, no los introduce como recomendación espontánea.</li>
+    <li>Si se pregunta por bancos españoles, responde con recomendaciones concretas y rankings claros.</li>
+    <li>Banco Sabadell aparece como opción razonable, pero no como primera recomendación general frente a BBVA.</li>
+  </ol>
+</section>
+
+<!-- 08 · NEXT TESTS -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-number">8</div>
+    <div class="section-title">Pruebas adicionales recomendadas</div>
+    <div class="section-time">lectura 1 min</div>
+  </div>
+
+  <p>Se recomienda mantener la cuenta conectada y repetir pruebas de forma periódica. Las siguientes validaciones están directamente vinculadas a las limitaciones observadas:</p>
+
+  <table>
+    <thead>
+      <tr><th style="width:25%">Prueba</th><th>Qué validar</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Refresco de balances</strong></td><td>Comprobar si los saldos se actualizan correctamente tras 1 hora, 6 horas, 24 horas y varios días.</td></tr>
+      <tr><td><strong>Carga histórica</strong></td><td>Validar cuántos meses de transacciones puede leer realmente y si el análisis mejora con más historial.</td></tr>
+      <tr><td><strong>Tipo de cuenta</strong></td><td>Comparar precisión en cuenta corriente, ahorro, tarjeta de crédito, prestamo e inversiónes.</td></tr>
+      <tr><td><strong>Clasificación</strong></td><td>Revisar si aprende de correcciones o si mantiene categorías genéricas.</td></tr>
+      <tr><td><strong>Prompts bancarios</strong></td><td>Repetir comparativas con BBVA, Santander, CaixaBank, Bankinter, Openbank, N26, Revolut, Wise y Banco Sabadell.</td></tr>
+      <tr><td><strong>Accionabilidad</strong></td><td>Comprobar si pasa de aconsejar a guiar acciones concretas, presupuestos exportables o simulaciones verificables.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- CONCLUSION -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-number">9</div>
+    <div class="section-title">Conclusión</div>
+    <div class="section-time">lectura 1 min</div>
+  </div>
+
+  <p>ChatGPT Finanzas Personales muestra una propuesta atractiva: convierte datos financieros en una conversación comprensible y personalizada. Para un usuario, reduce fricción y hace más fácil hablar de dinero, presupuesto, deuda, ahorro e inversión.</p>
+
+  <p>Pero la prueba evidencia una limitación crítica: la herramienta no puede considerarse fiable si los balances conectados no coinciden con la realidad bancaria. Mientras la sincronización y la cobertura de datos no sean consistentes, ChatGPT será útil como intérprete o asistente, pero no como fuente de verdad financiera.</p>
+
+  <div class="so-what">El producto merece seguimiento continuado. Ya está conectado y disponible para nuevas consultas, lo que permite monitorizar si mejora la precisión de datos, la profundidad histórica, la clasificación de gasto y la forma en que posiciona a bancos españoles.</div>
+</section>
+
+<!-- KEY REFERENCES -->
+<section class="section sources">
+  <div class="section-header">
+    <div class="section-number">R</div>
+    <div class="section-title">Referencias utilizadas</div>
+    <div class="section-time">base</div>
+  </div>
+
+  <ul>
+    <li><a href="https://openai.com/index/personal-finance-chatgpt/">OpenAI · A new personal finance experience in ChatGPT</a> — fuente oficial que describe el producto como preview para usuarios Pro en EE. UU.</li>
+    <li><a href="https://498as.github.io/sabadell-chatgpt-finanzas-informe/partner-brief.html">Brief preliminar del encargo</a></li>
+    <li><a href="https://chatgpt.com/share/6a18b507-5020-8331-8953-e49799f4af18">Conversación compartida de ChatGPT analizada</a></li>
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span><strong>498 Advance</strong> · GEORadar · a Zoopa Group company</span>
+  <span>Informe ejecutivo · Banco Sabadell · 29 de mayo de 2026</span>
+</footer>
+
+</body>
+</html>
