@@ -406,6 +406,25 @@
 
     footer strong { color: #004B87; }
 
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 7px;
+    }
+
+    .footer-logo {
+      width: 70px;
+      height: auto;
+      display: block;
+    }
+
+    .footer-logo-498 {
+      width: 58px;
+      height: auto;
+      display: block;
+    }
+
     .sources { font-size: 8.5pt; line-height: 1.45; }
     .sources a { color: #004B87; text-decoration: none; word-break: break-all; }
     .sources a:hover { text-decoration: underline; }
@@ -433,6 +452,7 @@
       .header-row, .header-meta, footer { flex-direction: column; align-items: flex-start; }
       .header .subtitle { max-width: 100%; }
       .zoopa-logo { width: 96px; margin-top: 2px; }
+      .footer-brand { align-items: flex-start; }
       .kpi-strip, .grid-2, .evidence-layout { grid-template-columns: 1fr; }
       .section-header { align-items: flex-start; }
       .section-time { display: none; }
@@ -785,7 +805,11 @@
 
 <!-- FOOTER -->
 <footer>
-  <span><strong>498 Advance</strong> · GEORadar · a Zoopa Group company</span>
+  <span class="footer-brand">
+    <img class="footer-logo" src="assets/brand/zoopa-short.svg" alt="Zoopa">
+    <img class="footer-logo-498" src="assets/brand/498-logo-blue.png" alt="498 Advance">
+    <span>GEORadar · a Zoopa Group company</span>
+  </span>
   <span>Informe ejecutivo · Banco Sabadell · 29 de mayo de 2026</span>
 </footer>
 
