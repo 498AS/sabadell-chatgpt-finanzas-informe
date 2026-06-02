@@ -48,6 +48,14 @@
       max-width: 70%;
     }
 
+    .zoopa-logo {
+      width: 118px;
+      height: auto;
+      display: block;
+      margin-top: 4px;
+      flex: 0 0 auto;
+    }
+
     .header-meta {
       display: flex;
       justify-content: space-between;
@@ -72,7 +80,6 @@
       background: #f0f5fa;
       padding: 14px 18px;
       margin-bottom: 22px;
-      border-left: 4px solid #004B87;
     }
 
     .exec-summary h2 {
@@ -282,10 +289,10 @@
 
     .carousel-nav {
       display: flex;
-      gap: 5px;
+      gap: 6px;
       flex-wrap: wrap;
       justify-content: flex-end;
-      min-width: 150px;
+      max-width: 280px;
     }
 
     .carousel-nav a {
@@ -293,11 +300,18 @@
       border: 1px solid #c8d7e4;
       background: #fff;
       text-decoration: none;
-      font-size: 7.8pt;
-      line-height: 1;
-      padding: 5px 7px;
-      min-width: 24px;
+      font-size: 7.6pt;
+      line-height: 1.15;
+      padding: 6px 8px;
       text-align: center;
+      min-width: 74px;
+    }
+
+    .carousel-nav a::before {
+      content: attr(data-step);
+      display: block;
+      font-weight: 700;
+      margin-bottom: 2px;
     }
 
     .onboarding-carousel {
@@ -329,6 +343,22 @@
       color: #555;
       margin-top: 7px;
       text-align: center;
+    }
+
+    .slide-controls {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 8.2pt;
+    }
+
+    .slide-controls a {
+      color: #004B87;
+      border: 1px solid #c8d7e4;
+      background: #f8fbfe;
+      padding: 5px 9px;
+      text-decoration: none;
     }
 
     .kpi-strip {
@@ -395,12 +425,14 @@
         page-break-inside: avoid;
       }
       .carousel-nav { display: none; }
+      .slide-controls { display: none; }
     }
 
     @media (max-width: 760px) {
       body { padding: 18px; }
       .header-row, .header-meta, footer { flex-direction: column; align-items: flex-start; }
       .header .subtitle { max-width: 100%; }
+      .zoopa-logo { width: 96px; margin-top: 2px; }
       .kpi-strip, .grid-2, .evidence-layout { grid-template-columns: 1fr; }
       .section-header { align-items: flex-start; }
       .section-time { display: none; }
@@ -416,8 +448,9 @@
   <div class="header-row">
     <div>
       <h1>ChatGPT Finanzas Personales · Informe Ejecutivo</h1>
-      <p class="subtitle">Hallazgos observados para Banco Sabadell · conexión real activa · foco en calidad de datos, capacidades y posicionamiento de bancos españoles</p>
+      <p class="subtitle">Hemos activado un mystery shopper humano en Estados Unidos, con acceso a sus cuentas bancarias reales, para probar ChatGPT Finanzas Personales desde dentro</p>
     </div>
+    <img class="zoopa-logo" src="assets/brand/zoopa-short.svg" alt="Zoopa">
   </div>
   <div class="header-meta">
     <span>Madrid · 29 de mayo de 2026</span>
@@ -429,9 +462,9 @@
 <section class="exec-summary">
   <h2>La lectura en un párrafo</h2>
   <p><strong>Lo valioso: tenemos ChatGPT Finanzas Personales conectado a un usuario real.</strong> No es una demo ni una captura aislada: es una cuenta viva, con movimientos bancarios diarios, que podemos consultar de nuevo cuando queramos para repetir pruebas, lanzar nuevos prompts y observar cómo evoluciona la herramienta.</p>
-  <p><strong>Por qué importa:</strong> hemos entrado en el producto en fase de prueba, cuando todavía hay errores, fricciones y datos imperfectos. Eso permite ver no solo lo que ChatGPT ya hace bien, sino también cómo mejora con el uso real y dónde siguen estando los límites.</p>
-  <p>La experiencia inicial es prometedora: la conexión bancaria es sencilla y la conversación resume gasto, deuda, ahorro, presupuesto, inversión y bancos españoles con mucha fluidez.</p>
-  <p><strong>El problema crítico no es el lenguaje; es la fiabilidad del dato.</strong> En la prueba, el saldo de una cuenta corriente no coincidía con el saldo real del banco. Incluso tras refrescar, ChatGPT mantuvo el dato incorrecto y recomendó usar la app bancaria como fuente de verdad.</p>
+  <p><strong>Por qué importa:</strong> conviene anticipar la evolución de OpenAI en el sector bancario. Esto no es una herramienta táctica aislada, sino un movimiento estratégico que puede afectar a cómo los clientes entienden, comparan y eligen bancos.</p>
+  <p>La experiencia inicial es prometedora: tus datos bancarios quedan conectados a toda la inteligencia de ChatGPT. La conexión es sencilla y la conversación no solo resume gasto, deuda, ahorro, presupuesto, inversión y bancos españoles; también da consejos y propone planes estratégicos.</p>
+  <p><strong>Las posibilidades son enormes; la limitación está en la precisión de los datos.</strong> En la prueba, vía open banking/Plaid, el saldo de una cuenta corriente no coincidía con el saldo real del banco. Tampoco se cargaban bien los datos anteriores y la clasificación de gastos no parecía de mayor calidad que la de una aplicación bancaria tradicional.</p>
   <p><strong>Conclusión operativa:</strong> hoy sirve como capa de interpretación y aprendizaje continuo, pero todavía no como fuente fiable para decisiones financieras sensibles. Precisamente por tenerlo conectado a una cuenta real, podemos seguir midiendo si mejora en balances, sincronización, histórico y recomendaciones.</p>
 </section>
 
@@ -501,7 +534,7 @@
     <div class="card">
       <h4>Lo que no queda resuelto</h4>
       <ul>
-        <li>La conexión no garantiza datos actuales.</li>
+        <li>La conexión no garantiza datos actualizados.</li>
         <li>El usuario puede confiar en una respuesta bien redactada aunque la base factual sea incorrecta.</li>
         <li>El banco sigue siendo la fuente de verdad cuando hay discrepancias.</li>
       </ul>
@@ -526,12 +559,12 @@
           <p>Secuencia de pantallas desde la invitación inicial hasta el paso de Plaid para conectar la cuenta.</p>
         </div>
         <nav class="carousel-nav" aria-label="Navegación del carrusel de onboarding">
-          <a href="#onboarding-1">1</a>
-          <a href="#onboarding-2">2</a>
-          <a href="#onboarding-3">3</a>
-          <a href="#onboarding-4">4</a>
-          <a href="#onboarding-5">5</a>
-          <a href="#onboarding-6">6</a>
+          <a href="#onboarding-1" data-step="Paso 1">Inicio</a>
+          <a href="#onboarding-2" data-step="Paso 2">Menú</a>
+          <a href="#onboarding-3" data-step="Paso 3">Finances</a>
+          <a href="#onboarding-4" data-step="Paso 4">Privacidad</a>
+          <a href="#onboarding-5" data-step="Paso 5">Plaid</a>
+          <a href="#onboarding-6" data-step="Paso 6">Teléfono</a>
         </nav>
       </div>
 
@@ -539,26 +572,32 @@
         <figure class="carousel-slide" id="onboarding-1">
           <img src="assets/onboarding/onboarding-01-intro.png" alt="Pantalla inicial de ChatGPT Finanzas con llamada a empezar">
           <figcaption>1 · Invitación inicial a gestionar finanzas desde ChatGPT.</figcaption>
+          <div class="slide-controls"><a href="#onboarding-2">Siguiente: menú</a></div>
         </figure>
         <figure class="carousel-slide" id="onboarding-2">
           <img src="assets/onboarding/onboarding-02-menu-finances.png" alt="Menú lateral de ChatGPT con acceso a Finances">
           <figcaption>2 · Acceso a Finances desde el menú de ChatGPT.</figcaption>
+          <div class="slide-controls"><a href="#onboarding-1">Anterior</a><a href="#onboarding-3">Siguiente: Finances</a></div>
         </figure>
         <figure class="carousel-slide" id="onboarding-3">
           <img src="assets/onboarding/onboarding-03-finances-entry.png" alt="Pantalla de Finances con botón para empezar">
           <figcaption>3 · Entrada a Finances y llamada a conectar cuentas.</figcaption>
+          <div class="slide-controls"><a href="#onboarding-2">Anterior</a><a href="#onboarding-4">Siguiente: privacidad</a></div>
         </figure>
         <figure class="carousel-slide" id="onboarding-4">
           <img src="assets/onboarding/onboarding-04-connect-finances.png" alt="Modal Connect Finances con información de privacidad y seguridad">
           <figcaption>4 · Confirmación de privacidad, control del usuario y uso informativo.</figcaption>
+          <div class="slide-controls"><a href="#onboarding-3">Anterior</a><a href="#onboarding-5">Siguiente: Plaid</a></div>
         </figure>
         <figure class="carousel-slide" id="onboarding-5">
           <img src="assets/onboarding/onboarding-05-plaid-card.png" alt="Tarjeta de Plaid para conectar cuentas financieras">
           <figcaption>5 · ChatGPT abre el flujo de conexión bancaria mediante Plaid.</figcaption>
+          <div class="slide-controls"><a href="#onboarding-4">Anterior</a><a href="#onboarding-6">Siguiente: teléfono</a></div>
         </figure>
         <figure class="carousel-slide" id="onboarding-6">
           <img src="assets/onboarding/onboarding-06-plaid-phone.png" alt="Pantalla de Plaid para continuar con número de teléfono">
           <figcaption>6 · Inicio de autenticación en Plaid para vincular la cuenta.</figcaption>
+          <div class="slide-controls"><a href="#onboarding-5">Anterior</a></div>
         </figure>
       </div>
     </div>
@@ -706,7 +745,7 @@
 <section class="section">
   <div class="section-header">
     <div class="section-number">8</div>
-    <div class="section-title">Pruebas adicionales recomendadas</div>
+    <div class="section-title">Pruebas futuras recomendadas</div>
     <div class="section-time">lectura 1 min</div>
   </div>
 
@@ -737,24 +776,11 @@
 
   <p>ChatGPT Finanzas Personales muestra una propuesta atractiva: convierte datos financieros en una conversación comprensible y personalizada. Para un usuario, reduce fricción y hace más fácil hablar de dinero, presupuesto, deuda, ahorro e inversión.</p>
 
-  <p>Pero la prueba evidencia una limitación crítica: la herramienta no puede considerarse fiable si los balances conectados no coinciden con la realidad bancaria. Mientras la sincronización y la cobertura de datos no sean consistentes, ChatGPT será útil como intérprete o asistente, pero no como fuente de verdad financiera.</p>
+  <p>La principal sorpresa negativa no es solo el saldo incorrecto. Es que, pese a la potencia de ChatGPT, la herramienta todavía no clasifica ni recomienda claramente mejor que una aplicación bancaria tradicional. Tampoco actúa de forma proactiva ni muestra la memoria persistente que se esperaría de un agente de IA.</p>
 
-  <div class="so-what">El producto merece seguimiento continuado. Ya está conectado y disponible para nuevas consultas, lo que permite monitorizar si mejora la precisión de datos, la profundidad histórica, la clasificación de gasto y la forma en que posiciona a bancos españoles.</div>
-</section>
+  <p>A día de hoy, una sesión normal de ChatGPT a la que se importe un extracto bancario podría cumplir una función muy parecida. La diferencia estratégica aparecerá si OpenAI convierte esta conexión en una capa persistente, precisa y proactiva sobre la vida financiera del usuario.</p>
 
-<!-- KEY REFERENCES -->
-<section class="section sources">
-  <div class="section-header">
-    <div class="section-number">R</div>
-    <div class="section-title">Referencias utilizadas</div>
-    <div class="section-time">base</div>
-  </div>
-
-  <ul>
-    <li><a href="https://openai.com/index/personal-finance-chatgpt/">OpenAI · A new personal finance experience in ChatGPT</a> — fuente oficial que describe el producto como preview para usuarios Pro en EE. UU.</li>
-    <li><a href="https://498as.github.io/sabadell-chatgpt-finanzas-informe/partner-brief.html">Brief preliminar del encargo</a></li>
-    <li><a href="https://chatgpt.com/share/6a18b507-5020-8331-8953-e49799f4af18">Conversación compartida de ChatGPT analizada</a></li>
-  </ul>
+  <div class="so-what">El producto merece seguimiento continuado. Ya está conectado mediante open banking y funciona como integrador bancario real. Está disponible para nuevas consultas, lo que permite monitorizar si mejora la precisión de datos, la profundidad histórica, la clasificación de gasto y la forma en que posiciona a bancos españoles.</div>
 </section>
 
 <!-- FOOTER -->
